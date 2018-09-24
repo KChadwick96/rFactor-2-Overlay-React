@@ -1,5 +1,5 @@
 import React from "react";
 
-const LapCounter = () => <p>1/1</p>;
+const LapCounter = () => <p>LAP 10/15</p>;
 
 export default LapCounter;

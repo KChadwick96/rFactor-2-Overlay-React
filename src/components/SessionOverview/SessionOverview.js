@@ -11,13 +11,14 @@ const SESSION_COUNTDOWN = ["practice", "qualify", "warmup"];
 const SESSION_LAP = ["race"];
 
 const StyledContainer = styled.div`
-  background-color: #0047ef;
+  background-color: #f0270d;
   color: #fff;
   width: 250px;
   font-size: 22px;
   padding: 5px 0;
   text-align: center;
   border-radius: 10px;
+  border: 2px solid #fff;
 `;
 
 const getComponentType = session => {
