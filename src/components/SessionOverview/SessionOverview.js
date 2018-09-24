@@ -52,7 +52,9 @@ const SessionOverview = ({ sessionData, colorPreset }) => {
   return (
     <StyledContainer>
       {componentType === COMPONENT_TYPE_TIMER && <CountdownTimer />}
-      {componentType === COMPONENT_TYPE_LAP && <LapCounter />}
+      {componentType === COMPONENT_TYPE_LAP && (
+        <LapCounter currentLap={1} totalLaps={10} />
+      )}
     </StyledContainer>
   );
 };
