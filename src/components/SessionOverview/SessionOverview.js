@@ -46,7 +46,7 @@ const SessionOverview = ({ sessionData, colorPreset }) => {
 };
 
 SessionOverview.propTypes = {
-  sessionData: PropTypes.object.isRequired,
+  sessionData: PropTypes.object,
   colorPreset: PropTypes.string
 };
 

@@ -1,31 +1,18 @@
 import React from "react";
 import { shallow } from "enzyme";
 import SessionOverview from "./SessionOverview";
+import { PracticeSessionData, RaceSessionData } from "../../data/sample";
 
 let wrapper = shallow(
-  <SessionOverview
-    colorPreset="red"
-    sessionData={{
-      session: "warmup"
-    }}
-  />
+  <SessionOverview colorPreset="red" sessionData={PracticeSessionData} />
 );
 
 let wrapperRace = shallow(
-  <SessionOverview
-    colorPreset="orange"
-    sessionData={{
-      session: "race"
-    }}
-  />
+  <SessionOverview colorPreset="orange" sessionData={RaceSessionData} />
 );
 
 const wrapperNoColours = shallow(
-  <SessionOverview
-    sessionData={{
-      session: "quali"
-    }}
-  />
+  <SessionOverview sessionData={PracticeSessionData} />
 );
 
 describe("<SessionOverview />", () => {
