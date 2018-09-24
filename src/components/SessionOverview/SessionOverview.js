@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import styled from "styled-components";
 import CountdownTimer from "../CountdownTimer";
 import LapCounter from "../LapCounter";
 
@@ -8,6 +9,16 @@ const COMPONENT_TYPE_LAP = "COMPONENT_TYPE_LAP";
 
 const SESSION_COUNTDOWN = ["practice", "qualify", "warmup"];
 const SESSION_LAP = ["race"];
+
+const StyledContainer = styled.div`
+  background-color: #0047ef;
+  color: #fff;
+  width: 250px;
+  font-size: 22px;
+  padding: 5px 0;
+  text-align: center;
+  border-radius: 10px;
+`;
 
 const getComponentType = session => {
   session = session.toLowerCase();
@@ -38,10 +49,10 @@ const SessionOverview = ({ sessionData, colorPreset }) => {
   const componentType = getComponentType(sessionData.session);
 
   return (
-    <div>
+    <StyledContainer>
       {componentType === COMPONENT_TYPE_TIMER && <CountdownTimer />}
       {componentType === COMPONENT_TYPE_LAP && <LapCounter />}
-    </div>
+    </StyledContainer>
   );
 };
 

@@ -11,7 +11,7 @@ let wrapperRace = shallow(
   <SessionOverview colorPreset="orange" sessionData={RaceSessionData} />
 );
 
-const wrapperNoColours = shallow(
+let wrapperNoColours = shallow(
   <SessionOverview sessionData={PracticeSessionData} />
 );
 
