@@ -1,16 +1,29 @@
 import React from "react";
 import { shallow } from "enzyme";
-import SessionOverview from "./";
+import SessionOverview from "./SessionOverview";
 
 let wrapper = shallow(
   <SessionOverview
-    bgColor="#000"
-    textColor="#FFF"
-    borderColor="yellow"
+    colorPreset="red"
     sessionData={{
-      enter: 0,
-      props: 0,
-      here: 0
+      session: "warmup"
+    }}
+  />
+);
+
+let wrapperRace = shallow(
+  <SessionOverview
+    colorPreset="orange"
+    sessionData={{
+      session: "race"
+    }}
+  />
+);
+
+const wrapperNoColours = shallow(
+  <SessionOverview
+    sessionData={{
+      session: "quali"
     }}
   />
 );
@@ -25,9 +38,15 @@ describe("<SessionOverview />", () => {
     expect(wrapper.equals(null)).toBe(true);
   });
 
-  it("Should render when not passed colours", () => {});
+  it("Should render when not passed colorPreset prop", () => {
+    expect(wrapperNoColours.length).toBe(1);
+  });
 
-  it("Should render timer when in practice/warmup/quali session", () => {});
+  it("Should render <CountdownTimer /> when in practice/warmup/quali session", () => {
+    expect(wrapper.find("CountdownTimer").length).toBe(1);
+  });
 
-  it("Should render lap counter when in race mode", () => {});
+  it("Should render <LapCounter /> when in race mode", () => {
+    expect(wrapperRace.find("LapCounter").length).toBe(1);
+  });
 });
