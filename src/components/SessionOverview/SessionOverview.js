@@ -19,6 +19,7 @@ const StyledContainer = styled.div`
   text-align: center;
   border-radius: 10px;
   border: 2px solid #fff;
+  font-weight: 700;
 `;
 
 const getComponentType = session => {
@@ -51,7 +52,9 @@ const SessionOverview = ({ sessionData, colorPreset }) => {
 
   return (
     <StyledContainer>
-      {componentType === COMPONENT_TYPE_TIMER && <CountdownTimer />}
+      {componentType === COMPONENT_TYPE_TIMER && (
+        <CountdownTimer session={"Q1"} secondsLeft={500} />
+      )}
       {componentType === COMPONENT_TYPE_LAP && (
         <LapCounter currentLap={1} totalLaps={10} />
       )}
