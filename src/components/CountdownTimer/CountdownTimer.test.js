@@ -1,13 +1,8 @@
 import React from "react";
 import { shallow } from "enzyme";
-import LapCounter from "./LapCounter";
+import CountdownTimer from "./CountdownTimer";
 
-const CURRENT_LAP = 1;
-const TOTAL_LAPS = 10;
-
-let wrapper = shallow(
-  <LapCounter currentLap={CURRENT_LAP} totalLaps={TOTAL_LAPS} />
-);
+let wrapper = shallow(<CountdownTimer session="Q1" secondsLeft={500} />);
 
 describe("<CountdownTimer />", () => {
   it("Renders without crashing", () => {

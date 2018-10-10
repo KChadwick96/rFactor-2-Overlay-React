@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import SessionOverview from "./components/SessionOverview";
+import StandingsEntry from "./components/StandingsEntry";
 
 class App extends Component {
   render() {
@@ -7,9 +8,11 @@ class App extends Component {
       <div>
         <SessionOverview
           sessionData={{
-            session: "race"
+            session: "practice"
           }}
         />
+
+        <StandingsEntry />
       </div>
     );
   }
